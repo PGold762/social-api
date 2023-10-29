@@ -26,7 +26,13 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ## Installation
 
-Download the files from the 
+Download the files from the repo and be sure to install the following:
+
+- MongoDB
+- Express
+- Mongoose
+
+Once installed, start your server and test in Insomnia.
 
 ## Usage
 
