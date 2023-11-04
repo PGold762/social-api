@@ -10,11 +10,6 @@ const router = express.Router();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-console.log('Server file is being executed');
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-  console.log('Connected to the database');
-
 // GET all users
 router.get('/api/users', async (req, res) => {
   try {
@@ -232,4 +227,3 @@ db.once('open', () => {
       console.log(`API server running on port ${PORT}!`);
     });
   });
-});
