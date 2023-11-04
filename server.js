@@ -5,10 +5,15 @@ const { User, Thought, Reaction } = require('./models');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+const router = express.Router();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+console.log('Server file is being executed');
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+  console.log('Connected to the database');
 
 // GET all users
 router.get('/api/users', async (req, res) => {
@@ -74,7 +79,7 @@ router.delete('/api/users/:userId', async (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    // BONUS: Remove a user's associated thoughts when deleted
+    // Remove a user's associated thoughts when deleted
     await Thought.deleteMany({ _id: { $in: deletedUser.thoughts } });
 
     res.json({ message: 'User and associated thoughts deleted' });
@@ -221,9 +226,10 @@ router.delete('/api/thoughts/:thoughtId/reactions/:reactionId', async (req, res)
 
 
 
-
+// Start Server
 db.once('open', () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
     });
   });
+});
