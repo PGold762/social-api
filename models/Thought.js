@@ -12,7 +12,7 @@ const reactionSchema = new mongoose.Schema({
     },
     username: {
         type: String,
-        required: true
+        required: false
     },
     createdAt: {
         type: Date,
@@ -35,7 +35,7 @@ const thoughtSchema = new mongoose.Schema({
     },
     username: {
         type: String,
-        required: true
+        required: false
     },
     reactions: [reactionSchema]
 },

@@ -9,6 +9,7 @@ const router = express.Router();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use('/',router);
 
 // GET all users
 router.get('/api/users', async (req, res) => {
@@ -210,7 +211,7 @@ router.delete('/api/thoughts/:thoughtId/reactions/:reactionId', async (req, res)
       return res.status(404).json({ message: 'Thought not found' });
     }
 
-    thought.reactions.id(req.params.reactionId).remove();
+    thought.reactions.pull({ _id: req.params.reactionId });
     await thought.save();
     res.json(thought);
   } catch (error) {
