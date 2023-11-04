@@ -46,7 +46,7 @@ Screenshot of App:
 
 ## Credits
 
-* Worked with Tutor Andrew Tirpok
+* Worked through the documentaiton from class activities
 
 ## License
 
