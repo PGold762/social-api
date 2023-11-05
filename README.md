@@ -38,15 +38,17 @@ Once installed, start your server and test in Insomnia.
 
 This is an app local on your device that you may trigger within terminal and see the functionality in Insomnia
 
-Link to video: [Social API](https://drive.google.com/file/d/1WF-4R0RiJvwtGvbSeG6mN6JMPFBnzQmX/view)
+Link to video: [Social API](https://drive.google.com/file/d/1vfQCZrYs9eiavhVVP4kIXE90ziFXViFy/view)
 
 Screenshot of App: 
 
-![Social API](/ecommerce-cap.png "Social API")
+![Social API](/social-app.png "Social API")
 
 ## Credits
 
 * Worked through the documentaiton from class activities
+
+* Received assistance from AskBCS Quinton
 
 ## License
 
