@@ -211,7 +211,7 @@ router.delete('/api/thoughts/:thoughtId/reactions/:reactionId', async (req, res)
       return res.status(404).json({ message: 'Thought not found' });
     }
 
-    thought.reactions.pull({ _id: req.params.reactionId });
+    thought.reactions.pull({ reactionId: req.params.reactionId });
     await thought.save();
     res.json(thought);
   } catch (error) {
